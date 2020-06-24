@@ -32,11 +32,12 @@ setTimeout(() => {
 
 var bot = mineflayer.createBot(options);
 bindEvents(bot);
+
+function bindEvents(bot) {
+
 navigatePlugin(bot);
 bot.chatAddPattern(/^([a-zA-Z0-9_]{3,16}) wants to teleport to you\.$/, "tpRequest", "tpa request");
 
-
-function bindEvents(bot) {
 const discord = new Discord.Client({disableEveryone: true});
 discord.commands = new Discord.Collection();
 discord.on("ready", () => {
@@ -190,7 +191,6 @@ server.listen(3000, function () {
         console.log("Attempting to reconnect...");
         bot = mineflayer.createBot(options);
         bindEvents(bot);
-        navigatePlugin(bot);
     }
     bot.on('chat', (username, message) => {
         let msg = message
