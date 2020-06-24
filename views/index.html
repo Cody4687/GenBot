@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Genesis v1</title>
+      <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+   </head>
+   <body>
+     <h1>Genesis v1</h1>	 
+     <p id="msg">Nothing to see here.</p>
+     <button onclick="kill()">/Kill</button>
+		 <button onclick="up()">Forward</button><br>
+     <button onclick="left()">Left</button>
+     <button onclick="down()">Backwards</button>
+     <button onclick="right()">Right</button><br>
+     <input type="text" placeholder="Player Name" id="tpa" maxlength="16" size="16">
+     <button onclick="add(document.getElementById('tpa').value)">Add</button>
+     <button onclick="remove(document.getElementById('tpa').value)">Remove</button>
+    </form>
+    <div id ="chat">
+        <div id = "chat-window">
+            <div id = "output"></div>
+            <div id = "feedback"></div>
+        </div>
+        <input id="message" type="text" placeholder="Message"/>
+        <button id="send">Send</button>
+    </div>
+    
+    <script src="/chat.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect();
+      function add(name) {
+        socket.emit('add', {name: name})
+        document.getElementById("msg").innerHTML = "Attempted to add " + name + "."
+      }
+      function remove(name) {
+        socket.emit('remove', {name: name})
+        document.getElementById("msg").innerHTML = "Removed " + name + "."
+      }
+      function kill() {
+        socket.emit('activateKill')
+        document.getElementById("msg").innerHTML = "Killed the bot."
+      }
+      function up() {
+        socket.emit('up')
+        document.getElementById("msg").innerHTML = "Moved forwards."
+      }
+      function down() {
+        socket.emit('down')
+        document.getElementById("msg").innerHTML = "Moved backwards."
+      }
+      function left() {
+        socket.emit('left')
+        document.getElementById("msg").innerHTML = "Moved left."
+      }
+      function right() {
+        socket.emit('right')
+        document.getElementById("msg").innerHTML = "Moved right."
+      }
+
+   </script>
+   </body>
+</html>

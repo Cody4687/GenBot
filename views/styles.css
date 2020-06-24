@@ -1,0 +1,96 @@
+h1 {
+color: purple;
+}
+p {
+    color: greenyellow
+}
+body {text-align: center;
+background-image: url('./web.png');
+background-size: cover;
+}
+button {
+    display: inline-block;
+    background-color: #7b38d8;
+    border-radius: 2px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 10px;
+    padding: 12px;
+    width: 100px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+input[type=text] {
+    display: inline-block;
+    background-color: #7b38a1;
+    border-radius: 2px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 10px;
+    padding: 12px;
+    width: 200px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  #chat{
+    max-width: 600px;
+    margin: 30px auto;
+    border: 1px solid rgba(19, 134, 61, 0.337);
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.05);
+    border-radius: 12px;
+}
+
+#chat-window{
+    height: 200px;
+    overflow: auto;
+    border-radius: 12px;
+}
+
+#output p{
+    padding: 14px 0px;
+    margin: 0 20px;
+    border-bottom: 1px solid #e9e9e9;
+    color: white;
+}
+
+#feedback p{
+    color: #aaa;
+    padding: 14px 0px;
+    margin: 0 20px;
+}
+
+#output strong{
+    color: #575ed8;
+}
+
+label{
+    box-sizing: border-box;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 12px;
+}
+
+input{
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background: rgb(233, 217, 217);
+    border: 0;
+    display: block;
+    width: 100%;
+    background: rgb(70, 154, 165);
+    border-bottom: 1px solid #eee;
+    font-family: Nunito;
+    font-size: 16px;
+}
